@@ -10,7 +10,7 @@ type Video struct {
 	ID         string    `valid:"uuid"`
 	ResourceId string    `valid:"notnull"`
 	FilePath   string    `valid:"notnull"`
-	UpdatedAt  time.Time `valid:"-"`
+	CreatedAt  time.Time `valid:"-"`
 }
 
 func init() {

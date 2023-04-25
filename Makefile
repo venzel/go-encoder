@@ -10,4 +10,7 @@ up:
 down:
 	docker-compose down
 
-.PHONY: server test up down
+test:
+	cd encoder && go test ./...
+
+.PHONY: server test up down test
