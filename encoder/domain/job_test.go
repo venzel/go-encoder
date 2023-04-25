@@ -12,34 +12,19 @@ func TestValidationJob(t *testing.T) {
 	status := "processing"
 	video := domain.Video{}
 
-	_, err := domain.NewJob(output, status, &video)
+	job, err := domain.NewJob(output, status, &video)
 
+	require.NotNil(t, job)
 	require.Nil(t, err)
 }
 
-// func TestJobIdIsNotUuid(t *testing.T) {
-// 	job := domain.NewJob()
+func TestJobIdIsNotUuid(t *testing.T) {
+	output := ""
+	status := ""
+	video := domain.Video{}
 
-// 	job.ID = "82121021"
+	job, err := domain.NewJob(output, status, &video)
 
-// 	err := job.Validate()
-
-// 	require.Error(t, err)
-// }
-
-// func TestJobValidation(t *testing.T) {
-// 	job := domain.NewJob()
-
-// 	video := domain.NewVideo()
-
-// 	job.ID = uuid.NewV4().String()
-// 	job.OutputBucketPath = "."
-// 	job.Status = "success"
-// 	job.Video = video
-// 	job.Error = "not"
-// 	job.CreatedAt = time.Now()
-
-// 	err := job.Validate()
-
-// 	require.Nil(t, err)
-// }
+	require.Nil(t, job)
+	require.Error(t, err)
+}
