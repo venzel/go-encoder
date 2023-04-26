@@ -6,6 +6,8 @@
 -   (test) github.com/sirupsen/logrus
 -   (test) github.com/stretchr/testify
 -   (uuid) github.com/satori/uuid
+-   (sqlite) github.com/jinzhu/gorm/dialects/sqlite
+-   (pq) github.com/lib/pq
 
 ## Rodar o projeto
 

@@ -40,7 +40,7 @@ func TestVideoValidation(t *testing.T) {
 	video := domain.NewVideo()
 
 	video.ID = uuid.NewV4().String()
-	video.ResourceId = "a"
+	video.ResourceID = "a"
 	video.FilePath = "."
 	video.CreatedAt = time.Now()
 
